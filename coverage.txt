@@ -1,8 +1,0 @@
-mode: atomic
-github.com/lsantanna87/gosay/main.go:11.65,13.16 2 2
-github.com/lsantanna87/gosay/main.go:13.16,16.3 2 1
-github.com/lsantanna87/gosay/main.go:16.8,18.3 1 1
-github.com/lsantanna87/gosay/main.go:21.36,23.20 2 4
-github.com/lsantanna87/gosay/main.go:27.2,27.22 1 2
-github.com/lsantanna87/gosay/main.go:23.20,25.3 1 2
-github.com/lsantanna87/gosay/main.go:30.13,33.2 2 0
