@@ -6,7 +6,7 @@ help:
 
 .PHONY: build
 build: ## Build and tag Docker image
-	docker build -t 5587lucas/gosay:latest .
+	docker build -t gosay:latest .
 
 .PHONY: ci
 ci: ## Simulates CI. Runs tests, and builds if they pass
@@ -26,13 +26,13 @@ stop: ## Stop running container
 
 .PHONY: start
 start: ## Stats containers
-	docker run -p 8080:8080 --name 5587lucas/gosay:latest -d gosay
+	docker run -p 8080:8080 --name gosay:latest -d gosay
 
 .PHONY: test
 test: ## Runs tests
 	go test  -v -p 1 -race -timeout=30s ./...
 
 push: ## push app to docker registry
-	docker push 5587lucas/gosay:latest
+	docker push gosay:latest
 
 .DEFAULT_GOAL := help
