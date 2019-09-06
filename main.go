@@ -28,6 +28,7 @@ func GetHostname() (string, error) {
 }
 
 func main() {
+	log.Println("Initializing Application!")
 	http.HandleFunc("/", GetHostNameHandler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

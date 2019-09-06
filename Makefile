@@ -19,20 +19,21 @@ cleanup: ## Stops all containers, and removes temp files created by build/test
 	go clean
 
 .PHONY: stop
-stop: ## Stop running container
+stop: ## Stop and delete gosay container and images
 	docker stop gosay
 	docker rm gosay
 	docker rmi gosay --force
 
 .PHONY: start
 start: ## Stats containers
-	docker run -p 8080:8080 --name gosay:latest -d gosay
+	docker run -p 8080:8080 --name gosay -d gosay
 
 .PHONY: test
 test: ## Runs tests
 	go test  -v -p 1 -race -timeout=30s ./...
 
 push: ## push app to docker registry
-	docker push gosay:latest
+	docker tag gosay:latest 5587lucas/gosay:latest
+	docker push 5587lucas/gosay:latest
 
 .DEFAULT_GOAL := help
