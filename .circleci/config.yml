@@ -1,0 +1,20 @@
+version: 2 # use CircleCI 2.0
+jobs: # basic units of work in a run
+  build: # runs not using Workflows must have a `build` job as entry point
+    steps: # steps that comprise the `build` job
+
+      - run:
+          name:
+          command: |
+            make test
+
+      - run:
+          name:
+          command: |
+            make build
+
+workflows:
+  version: 2
+  build-workflow:
+    jobs:
+      - build
