@@ -24,7 +24,7 @@ jobs:
             dep ensure
         fi
         
-   - name: Test
+    - name: Test
       run: go test  -v -p 1 -race -timeout=30s ./...
 
     - name: Build
